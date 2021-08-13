@@ -1,0 +1,196 @@
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+//-----------ОСНОВНЫЕ ЦВЕТА------------------
+$color_1: #FFFFFF;
+$color_2: #333;
+$color_3: #5FA2ED;
+$color_4: linear-gradient(180deg, #589AE5 0%, #4E7AAC 100%);
+$color_5: #F6F6F6;
+$color_6: #8D8D8D;
+$color_7: #eaeaea;
+
+
+$link-img: '../';
+//$link-img: '';
+
+
+$minWidth: 320px;
+$maxWidth: 1440;
+$maxWidthContainer: 1150;
+$md1: $maxWidthContainer + 20;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+body {
+  @include adaptiv-font(16, 14);
+  font-weight: 400;
+  color: #222222;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+  background-color: $color_5;
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &._loaded {
+  }
+}
+
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  @media (max-width: $md1+px) {
+    max-width: 970px;
+
+  }
+  @media (max-width: $md2+px) {
+    max-width: 750px;
+    padding: 0 20px;
+  }
+  @media (max-width: $md3+px) {
+    max-width: none;
+    padding: 0 20px;
+  }
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+.title {
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Oswald', sans-serif;
+}
+
+//-----------Кнопка основная------------------
+
+.button {
+  background: $color_4;
+  color: $color_1;
+  padding: 0 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  cursor: pointer;
+  transition: .5s;
+  width: fit-content;
+  font-size: 22px;
+  font-weight: 600;
+  border: 1px solid $color_3;
+  border-radius: 10px;
+
+  &:hover {
+    background: $color_1;
+    color: $color_3;
+  }
+}
+.button-in-basket{
+  background: $color_4;
+  color: $color_1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  cursor: pointer;
+  transition: .5s;
+  padding: 0 15px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1px solid $color_3;
+  width: fit-content;
+  border-radius: 10px;
+  svg{
+    margin-right: 10px;
+
+  }
+  &:hover {
+    background: $color_1;
+    color: $color_3;
+    path{
+      fill: $color_3;
+    }
+  }
+}
+
+.blog-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  font-size: 18px;
+  border: 1px solid $color_1;
+  color: $color_1;
+  border-radius: 10px;
+  &:hover {
+    background: $color_3;
+    border: 1px solid $color_3;
+  }
+}
+.about-us__button{
+  width: 290px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68px;
+  font-size: 18px;
+  border: 1px solid $color_3;
+  color: $color_2;
+  border-radius: 10px;
+  &:hover {
+    background: $color_3;
+    border: 1px solid $color_3;
+    color: $color_1;
+  }
+ }
+
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "null";
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+.page {
+  flex: 1 1 auto;
+  padding-top: 55px;
+  padding-bottom: 25px;
+  @include mq('desktop') {
+    padding-top: 120px;
+    padding-bottom: 40px;
+  }
+
+  &.main {
+    padding-top: 0 !important;
+  }
+  &.page-lk{
+    padding-top: 170px;
+
+    @include mq('desktop') {
+      padding-top: 270px;
+    }
+  }
+}
+
+//===================================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+
+
